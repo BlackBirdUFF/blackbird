@@ -18,6 +18,21 @@ header {
     right: 0;
     height: 3.5rem;
     z-index: 5;
+    position:relative;
+}
+
+header .hamburguer {
+    position: absolute;
+    /* margin: 0 0rem; */
+    right: 3.5rem;
+    display: flex;
+    align-items: center;
+    z-index: 6;
+    visibility: hidden;
+}
+header .hamburguer img{
+    position: absolute;
+    height: 2.5rem;
 }
 
 header .titulo-header{
@@ -26,24 +41,19 @@ header .titulo-header{
 }
 
 header .logo{
-    /* background-color: red; */
     display: flex;
     align-items: center;
     height: 3.5rem;
-    /* border: 1px 1px solid white; */
 }
 
 header .logo img {
     background-color: black;
     margin: 0;
     height: 2.8rem;
-    /* padding: 0.5rem; */
     border-radius: 50%;
-    /* border-radius: 1.4rem; */
 }
 
 header .titulo {
-    /* background-color: red; */
     display: flex;
     align-items: center;
     height: 3.5rem;
@@ -51,52 +61,8 @@ header .titulo {
 }
 
 header .titulo img {
-    /* background-color: black; */
     margin: 0;
     height: 2.6rem;
-    /* padding: 0.5rem; */
-    /* border-radius: 50%; */
-    /* border-radius: 1.4rem; */
-}
-
-header nav {
-    display: flex;
-}
-
-header .opt-menu {
-    font-weight: 600;
-    
-    /* margin-left: 0 1rem; */
-    height: 3.5rem;
-    display: flex;
-    /* flex-direction: column; */
-    text-align: center;
-    /* justify-content: center; */
-    align-items: center;
-    /* white-space: pre-line; */
-    /* background-color: black; */
-    /* font-weight: 600; */
-}
-
-header .opt-menu a {
-    line-height: normal;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.2); */
-    /* padding: 0 1rem; */
-}
-
-header .opt-menu .opt-princ {
-    height: 2.6rem;
-    
-    
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    /* text-align: center; */
-
-
-    line-height: normal;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0 1rem;
 }
 
 header nav a {
@@ -106,62 +72,87 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #ff7b00;    /* Cor diferente ao passar o mouse */
+    color: #ff7b00;
+    /* Cor diferente ao passar o mouse */
 }
-
-.menu-suspenso, .menu-suspenso-aberto{
-    /* line-height: 2rem; */
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background-color: #000000dd;
-    padding: 1rem;
-    border-radius: 15px;
-    display: none;
-    top: 3.4rem;
-    /* transform: translateX(-1rem); */
-    text-align: left;
+header .opt-menu {
     font-weight: 600;
-    text-shadow: 2px 2px 2px #000000;
-    box-shadow: 5px 5px 2px #000000aa;
 }
 
-.menu-suspenso a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 0;
+#menu-barras {
+    /* display: none; */ /* ------------------------------------------------------------------- */
 }
-.menu-suspenso :last-child {
-    border-bottom: none;
+#menu-x {
+    display: none; /* ------------------------------------------------------------------- */
 }
-
-
-/* APAGAR */
-.menu-suspenso-aberto{
-    display: inherit;
-}
-.menu-suspenso-aberto a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 0;
-}
-
-.menu-suspenso-aberto :last-child {
-    border-bottom: none;
-}
-
-
-/* APAGAR ATE AQUI */
-
 
 .spacer {
-    height: 3.5rem;
+    /* height: 3.5rem; */
     /* background-color: #333; */
     /* background-color: linear-gradient(white, blue); */
     /* Ajuste a altura para corresponder à altura do header */
 }
 
+/* Tela Grande */
+@media (min-width: 851px){
+
+    header nav {
+        display: flex;
+    }
+
+    header .opt-menu {
+        /* font-weight: 600; */
+        height: 3.5rem;
+        display: flex;
+        text-align: center;
+        align-items: center;
+    }
+
+    header .opt-menu a {
+        line-height: normal;
+    }
+
+    header .opt-menu .opt-princ {
+        height: 2.6rem;
+        display: flex;
+        align-items: center;
+        line-height: normal;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0 1rem;
+    }
 
 
 
+    .menu-suspenso,
+    .menu-suspenso-aberto {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: #000000dd;
+        padding: 1rem;
+        border-radius: 15px;
+        display: none;
+        top: 3.4rem;
+        text-align: left;
+        font-weight: 600;
+        text-shadow: 2px 2px 2px #000000;
+        box-shadow: 5px 5px 2px #000000aa;
+    }
+
+    .menu-suspenso a {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 0;
+    }
+
+    .menu-suspenso :last-child {
+        border-bottom: none;
+    }
+
+}
+
+
+
+/* Tela Pequena */
 @media (max-width: 850px) {
     header {
         /* flex-direction: column; */
@@ -171,13 +162,64 @@ header nav a:hover {
         /* margin-bottom: 10px; */
     }
 
+    header .hamburguer {
+        position: relative;
+        visibility: visible;
+    }
+
     header nav {
-        visibility: hidden;
-        width: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 17rem;
+        background-color: rgba(0, 0, 0, 0.850);
+        top: 3.5rem;
+        right: 0;
+        text-align: left;
+        border-radius: 20px;
+        padding: 1rem;
+        display: none; /* ------------------------------------------------------------------- */
     }
 
     header nav a {
-        /* margin-left: 0; */
-        /* margin-bottom: 10px; */
+        /* position: relative; */
+        /* visibility: visible
+        ; */
     }
+
+
+
+
+
+
+    header .menu-suspenso{
+        /* position: relative; */
+        /* visibility: visible; */
+        display: inherit;
+        flex-direction: column;
+        line-height: normal;
+        /* border: 2px solid white; */
+    }
+
+
+    header .opt-menu{
+        display: flex;
+        flex-direction: column;
+        /* border: 5px solid blue; */
+    }
+
+    header .opt-menu .opt-princ {
+        /* height: 1rem; */
+        margin: 3rem 0 1rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 15pt;
+    }
+
+    .menu-suspenso{
+        margin-left: 2rem;
+    }
+    .menu-suspenso a {
+        padding: 0.5rem;
+    }
+
 }
