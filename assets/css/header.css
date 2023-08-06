@@ -17,6 +17,7 @@ header {
     left: 0;
     right: 0;
     height: 3.5rem;
+    z-index: 5;
 }
 
 header .titulo-header{
