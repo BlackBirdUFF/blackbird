@@ -8,6 +8,10 @@
     src: url(../fonts/Caveat/Caveat-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: 'anthony';
+    src: url('../fonts/AnthonyHunter/AnthonyHunterItalic.ttf');
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -41,7 +45,7 @@ main {
 
 .hero-section {
     text-align: center;
-    background-color: #000000bb;
+    background-color: #00000020; /*#opacidade do fundo preto*/
     color: #ff7b00;
     height: 60vh;
     z-index: 1;
@@ -49,17 +53,20 @@ main {
 
 
 .hero-section h1 {
-    font-size: 32pt;
+    font-family: anthony;
+    font-size: 42pt;
     padding: 4rem 0 1rem 0;
     font-weight: 600;
-    text-shadow: 3px 2px 2px black;
+    color: black;
+    text-shadow: 1px 1px 2px #ff7b00;
 }
 
 .hero-section p {
     font-size: 20pt;
     font-weight: 600;
     line-height: 1.5rem;
-    text-shadow: 2px 1px 1px black;
+    color: black;
+    text-shadow: 1px 1px 2px #ff7b00;
     padding: 0 2rem 2rem 2rem;
     font-family: caveat;
     /* background-color: red; */
@@ -67,19 +74,27 @@ main {
 }
 .btn-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    /* align-items: flex-end; */
 }
 
 .btn{
+    font-family: anthony;
     display: flex;
     align-items: center;
     justify-content: center;
     /* background-color: blue; */
+    /* border: solid 2px rgba(0, 0, 0, 0.5); */
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.300);
+    box-shadow: 1px 1px 1px black;
+    margin: 0 1rem 0 0;
+    width: 40vw;
 }
 
-.btn:hover{
-    transform: scale(110%);
+.btn:hover img{
+    transform: scale(100%);
+    opacity: 0%;
 }
 .btn img{
     width: 80vw;
@@ -90,15 +105,17 @@ main {
     margin: 0;
     opacity: 90%;
     filter: drop-shadow(15px 15px 1px black);
+    opacity: 0%;
 }
 
 .btn h2{
     color: black;
     padding: 0;
     font-weight: 600;
-    text-shadow: 2px 2px 4px white;
-    font-size: 18pt;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+    font-size: 23pt;
     position: absolute;
+    margin: 1rem;
 }
 
 
@@ -150,12 +167,7 @@ main {
 }
 
 /* Estilos para o footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
+
 
 /* Telas grandes */
 @media (min-width: 851px) {
@@ -168,17 +180,23 @@ footer {
     .hero-section h1 {
         padding: 1rem 0 1rem 0;
         font-weight: 600;
-        text-shadow: 3px 2px 2px black;
+        /* text-shadow: 3px 2px 2px black; */
     }
 
 
 }
 
 /* Tela Muito Pequena */
-@media (max-width: 400px) {
+@media (max-width: 550px) {
     .hero-section h1 {
         font-size: 25pt;
     }
-
+    .btn {
+        width: 70vw;
+        font-size: 18pt;
+    }
+    .hero-section p {
+        font-size: 15pt;
+    }
 
 }
