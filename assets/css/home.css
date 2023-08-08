@@ -60,8 +60,9 @@ main {
     font-weight: 600;
     line-height: 1.5rem;
     text-shadow: 2px 1px 1px black;
-    padding-bottom: 2rem;
+    padding: 0 2rem 2rem 2rem;
     font-family: caveat;
+    /* background-color: red; */
     
 }
 .btn-container {
@@ -164,7 +165,20 @@ footer {
 
 /* Telas pequenas */
 @media (max-width: 850px) {
-    
+    .hero-section h1 {
+        padding: 1rem 0 1rem 0;
+        font-weight: 600;
+        text-shadow: 3px 2px 2px black;
+    }
+
+
+}
+
+/* Tela Muito Pequena */
+@media (max-width: 400px) {
+    .hero-section h1 {
+        font-size: 25pt;
+    }
 
 
 }

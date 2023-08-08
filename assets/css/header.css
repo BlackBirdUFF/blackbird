@@ -58,7 +58,7 @@ header .titulo {
     /* position: absolute; */
     /* background-color: red; */
     /* flex-grow: 1; */
-    margin-right: 3.5rem;
+    margin-right: 0rem;
     /*  */
     justify-content: center;
     align-items: center;
@@ -228,4 +228,11 @@ header .opt-menu {
         padding: 0.5rem;
     }
 
+    header .titulo {
+        margin-right: 3.5rem;
+
+    }
+
 }
+
+/* Tela Muito Pequena */
