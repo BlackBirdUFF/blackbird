@@ -81,7 +81,7 @@ main {
     transform: scale(110%);
 }
 .btn img{
-    width: 100vw;
+    width: 90vw;
     max-width: 28rem;
     /* background-color: red; */
     height: 7rem;
